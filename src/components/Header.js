@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { WeatherDashboard } from './Weather/WeatherDashboard';
 
 const Header = (props) => (
-    <nav className="header navbar navbar-dark bg-dark" style={{overflowX: 'hidden'}}>
-        <div className="container">
-            <div className="brand">
-                <i className="brand-icon fa fa-sun-o fa-2x"></i>
-                <span className="brand-text">{props.title}</span>
-            </div>
+    <nav className="header navbar navbar-dark bg-dark col-lg-12" style={{overflowX: 'hidden'}}>
+        <div className="col-lg-4">
+            <span className="brand-icon fa fa-sun-o fa-2x"></span>
+            <span className="brand-text">{props.title}</span>
         </div>
+        <div className="col-lg-8">
+            <WeatherDashboard />
+        </div>   
     </nav>
 );
 

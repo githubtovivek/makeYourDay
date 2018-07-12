@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 // IMPORT PROJECT REFERENCES
 import { CurrentWeatherDisplay } from './CurrentWeatherDisplay';
-import { DailyWeatherDisplay } from './DailyWeatherDisplay';
+// import { DailyWeatherDisplay } from './DailyWeatherDisplay';
 import { HourlyWeatherDisplay } from './HourlyWeatherDisplay';
 
 // IMPORT PROJECT SERVICES
@@ -35,7 +35,7 @@ class WeatherDashboard extends Component {
             .getCurrentPosition()
             .then(position => {
                 this.loadCurrentWeatherByPosition(position);
-                this.loadDailyWeatherByPosition(position);
+                //this.loadDailyWeatherByPosition(position);
                 this.loadHourlyWeatherByPosition(position);
             })
             .catch(error => console.log(error));      
@@ -89,8 +89,7 @@ class WeatherDashboard extends Component {
 
     handleOnRefresh() {
         this.setState(() => ({
-            showCurrentWeather: false,
-            showDailyWeather: false,            
+            showCurrentWeather: false,   
             showHourlyWeather: false
         }));
 
@@ -98,7 +97,7 @@ class WeatherDashboard extends Component {
             .getCurrentPosition()
             .then(position => {
                 this.loadCurrentWeatherByPosition(position);
-                this.loadDailyWeatherByPosition(position);
+                //this.loadDailyWeatherByPosition(position);
                 this.loadHourlyWeatherByPosition(position);
             })
             .catch(error => console.log(error));
@@ -107,26 +106,24 @@ class WeatherDashboard extends Component {
 
     showWeather() {
         return this.state.showCurrentWeather 
-            && this.state.showDailyWeather 
             && this.state.showHourlyWeather;
     }
 
 
     showSpinner() {
         return !this.state.showCurrentWeather 
-            || !this.state.showDailyWeather 
             || !this.state.showHourlyWeather;
     }
 
 
     render() {
         return (
-            <div>
+            <div className="col-lg-12">
                 {
                     this.showWeather() &&
-                    <div>
+                    <div className="weather-container">
                         <CurrentWeatherDisplay weather={this.state.weather} onRefresh={this.handleOnRefresh} />
-                        <DailyWeatherDisplay dailyForecasts={this.state.dailyForecasts} />
+                        {/* <DailyWeatherDisplay dailyForecasts={this.state.dailyForecasts} /> */}
                         <HourlyWeatherDisplay hourlyForecasts={this.state.hourlyForecasts} />
                     </div>
                 }

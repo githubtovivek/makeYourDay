@@ -1,7 +1,7 @@
 {
-  "name": "react-weather-standard",
+  "name": "makeYourDay",
   "version": "1.0.0",
-  "description": "A weather application that provides the current weather, daily forecast, and hourly forecast.",
+  "description": "A application that provides movies, lunc, dinner etc. suggestions on the basis of weeather and time.",
   "scripts": {
     "build": "webpack -d",
     "build:watch": "webpack --watch",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drminnaar/react-weather-standard.git"
+    "url": "https://github.com/githubtovivek/makeYourDay.git"
   },
   "license": "MIT",
   "babel": {

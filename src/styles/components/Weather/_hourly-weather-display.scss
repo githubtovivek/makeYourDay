@@ -1,14 +1,18 @@
-$hourly-weather-display-height: 170px;
+$hourly-weather-display-height: 100px;
 $hourly-weather-display-color: lightSteelBlue;
 
 .hourly-weather-card {
-    height: $hourly-weather-display-height - 20px;
+    height: $hourly-weather-display-height;
     text-align: center;
+
+    .text-capitalize {
+        font-size: 14px;
+    }
 }
 
 .hourly-weather-card .icon {
-    height: 50px;
-    max-width: 50px;
+    height: 30px;
+    max-width: 30px;
 }
 
 .hourly-weather-display {
@@ -16,6 +20,7 @@ $hourly-weather-display-color: lightSteelBlue;
     height: $hourly-weather-display-height;
     position: relative;
     width: 100%;
+    display: inline-block;
 }
 
 .hourly-weather-display .carousel {
@@ -25,10 +30,11 @@ $hourly-weather-display-color: lightSteelBlue;
 
 .hourly-weather-display .carousel-nav {
     cursor: pointer;
-    line-height: $hourly-weather-display-height - 20px;
+    line-height: $hourly-weather-display-height;
     opacity: 0.5;
     position: absolute;
     z-index: 1;
+    height: 100px;
 }
 
 .hourly-weather-display .carousel-nav > i {

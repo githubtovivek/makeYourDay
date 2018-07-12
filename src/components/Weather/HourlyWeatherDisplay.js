@@ -18,8 +18,7 @@ const options = {
 class HourlyWeatherDisplay extends Component {
     render(){
         return (
-            <div className="hourly-weather-display">
-                <div className="text-center h5 pt-2">Hourly</div>
+            <div className="hourly-weather-display col-lg-6">
                 <div className="carousel">
                     <OwlCarousel ref={el => this.carousel = el} options={options}>
                         {

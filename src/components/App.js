@@ -1,14 +1,13 @@
 import React from 'react';
 import { Header } from './Header';
-import { WeatherDashboard } from './Weather/WeatherDashboard';
+
+import Movies from './Movie/Movies';
 
 const App = () => (
-    <div>
-        <Header title='Weather' />
+    <div className="container">
+        <Header title='Make My Day' />
         <div className="mt-lg-5">
-            <div className="col-lg-6 p-0 mx-auto">
-                <WeatherDashboard />
-            </div>       
+            <Movies />
         </div>
     </div>
 );
